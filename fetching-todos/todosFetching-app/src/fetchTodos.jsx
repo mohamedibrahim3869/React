@@ -1,15 +1,12 @@
 //import { useState } from 'react';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import useSWR from "swr";
-import "./App.css";
+import useSWR from 'swr';
+import './App.css';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 const FetchTodos = () => {
-    const { data, error } = useSWR(
-        "https://jsonplaceholder.typicode.com/todos",
-        fetcher,
-    );
+    const { data, error } = useSWR('https://jsonplaceholder.typicode.com/todos', fetcher);
     if (!data) {
         return <h2>Loading...</h2>;
     }
